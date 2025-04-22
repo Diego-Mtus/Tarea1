@@ -20,4 +20,8 @@ public class Deposito<T>{
             return null;
         }
     }
+
+    public ArrayList<T> getArrayList(){
+        return new ArrayList<>(arrayList);
+    }
 }
