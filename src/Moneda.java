@@ -1,12 +1,23 @@
 abstract public class Moneda implements Comparable<Moneda>{
 
-    public Moneda(){};
+    static private int serieContador = 1;
+    private int serie;
 
-    public Moneda getSerie(){
-        return this;
+    public Moneda(){
+        this.serie = serieContador;
+        serieContador++;
+    };
+
+    public int getSerie(){
+        return this.serie;
     }
 
     public abstract int getValor();
+
+    @Override
+    public String toString(){
+        return "Moneda con serie " + this.getSerie() + " tiene valor de " + this.getValor();
+    }
 
     @Override
     public int compareTo(Moneda m) {
