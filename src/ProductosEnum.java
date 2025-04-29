@@ -7,6 +7,17 @@ public enum ProductosEnum {
 
     // Dulces
     SNICKERS,
-    SUPER8
+    SUPER8;
+
+    private int precio;
+
+    public void setPrecio(int precio){
+        this.precio = precio;
+    }
+
+    public int getPrecio(){
+        return this.precio;
+    }
+
 
 }

@@ -11,6 +11,9 @@ public class Main {
         depositoMonedas.add(new Moneda100());
         depositoMonedas.add(new Moneda1000());
 
+        // ProductosEnum eleccion = ProductosEnum.COCACOLA;
+        Expendedor expendedor = new Expendedor(30);
+
 
         // Prueba de print de ArrayList sin y con sort
         ArrayList<Moneda> ordenado = depositoMonedas.getArrayList();
