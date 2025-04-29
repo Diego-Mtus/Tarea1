@@ -5,12 +5,10 @@ public class Main {
 
         Deposito<Moneda> depositoMonedas = new Deposito<>();
         depositoMonedas.add(new Moneda100());
-        depositoMonedas.add(new Moneda1500());
         depositoMonedas.add(new Moneda1000());
         depositoMonedas.add(new Moneda100());
         depositoMonedas.add(new Moneda500());
         depositoMonedas.add(new Moneda100());
-        depositoMonedas.add(new Moneda1500());
         depositoMonedas.add(new Moneda1000());
 
 
