@@ -1,12 +1,25 @@
+/**
+ * Simulación de un expendedor con una cantidad finita de productos que se pueden comprar
+*/
 public class Expendedor {
 
+    /** Depositos para gestionar las Coca-colas*/
     private Deposito<Producto> depositoCocaCola;
+    /** Depositos para gestionar las Sprites*/
     private Deposito<Producto> depositoSprite;
+    /** Depositos para gestionar las Fanta*/
     private Deposito<Producto> depositoFanta;
+    /** Depositos para gestionar los Snickers*/
     private Deposito<Producto> depositoSnickers;
+    /** Depositos para gestionar los Super 8*/
     private Deposito<Producto> depositoSuper8;
+    /** Depositos para gestionar las monedas*/
     private Deposito<Moneda> depositoMonedas;
 
+
+    /** Constructor que crea los productos contenidos en cada depósito.
+     * @param cantidad Cantidad de productos por cada deposito.
+     */
     public Expendedor(int cantidad) {
         depositoCocaCola = new Deposito<Producto>();
         depositoSprite = new Deposito<Producto>();
@@ -24,6 +37,15 @@ public class Expendedor {
 
     }
 
+    /** Método que compra un producto del expendedor si se dan condiciones necesarias,
+     * en caso de no cumplir con condiciones, se lanza una excepción.
+     * @param m Moneda con la que se va a pagar el producto.
+     * @param eleccion Elección del producto a comprar.
+     * @return Producto comprado
+     * @throws PagoIncorrectoException Se lanza si se intenta pagar con una moneda null.
+     * @throws NoHayProductoException Se lanza si ya no quedan más de ese producto en su correspondiente depósito.
+     * @throws PagoInsuficienteException Se lanza si la moneda usada no es suficiente para comprar producto.
+     * */
     public Producto comprarProducto(Moneda m, ProductosEnum eleccion) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException{
         if(m == null){
             throw new PagoIncorrectoException();
@@ -75,6 +97,12 @@ public class Expendedor {
         }
     }
 
+    /** Método usado dentro de comprarProductos() para gestionar el vuelto en monedas de 100 que se irán almacenando
+     *  en el deposito de Monedas.
+     * @param precioEnum Precio del producto que se quiere comprar.
+     * @param depositoMoneda Deposito de monedas donde se almacenaran monedas de 100.
+     * @param m Moneda con la que se quiere pagar el producto.
+     * */
     private void procesarMonedas(int precioEnum, Deposito<Moneda> depositoMoneda, Moneda m){
         int auxPrecio = m.getValor() - precioEnum;
         while (auxPrecio > 0) {
@@ -83,6 +111,10 @@ public class Expendedor {
         }
     }
 
+    /** Método para obtener el vuelto una vez que se haya comprado un producto.
+     * Para un correcto uso, se debe implementar dentro de un ciclo para obtener todas las monedas.
+     * @return Retorna la primera moneda almacenada en el deposito de monedas.
+     * */
     public Moneda getVuelto(){
         return this.depositoMonedas.get();
     }
