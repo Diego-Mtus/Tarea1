@@ -4,7 +4,7 @@ public class Sprite extends Bebida{
     }
 
     @Override
-    public String beber() {
-        return "";
+    public String usar() {
+        return super.usar() + "Sprite.";
     }
 }

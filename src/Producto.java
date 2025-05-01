@@ -8,4 +8,6 @@ abstract class Producto {
     public int getSerie() {
         return serie;
     }
+
+    public abstract String usar();
 }

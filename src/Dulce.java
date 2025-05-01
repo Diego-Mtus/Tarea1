@@ -1,9 +1,11 @@
 public abstract class Dulce extends Producto{
-    
-    
+
     public Dulce(int serie) {
         super(serie);
     }
 
-    public abstract String comer();
+    @Override
+    public String usar() {
+        return "Se ha comido ";
+    }
 }

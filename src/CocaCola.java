@@ -5,7 +5,7 @@ public class CocaCola extends Bebida{
     }
 
     @Override
-    public String beber() {
-        return "";
+    public String usar() {
+        return super.usar() + "Coca-Cola.";
     }
 }
