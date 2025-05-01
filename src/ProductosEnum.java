@@ -9,9 +9,9 @@ public enum ProductosEnum {
     SNICKERS(4, 500, "Snickers"),
     SUPER8(5, 300, "Super8");
 
-    final int indice;
+    private final int indice;
     private int precio;
-    final String nombre;
+    private final String nombre;
 
     ProductosEnum(int indice, int precio, String nombre){
         this.indice = indice;
