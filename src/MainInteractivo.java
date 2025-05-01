@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MainInteractivo {
 
     // Se debe actualizar manualmente de acuerdo a cuántas opciones definamos.
-    static final int CANTIDAD_INDICE = 3;
+    static final int CANTIDAD_INDICE = 7;
 
     private static void pantallaPrincipal(){
         System.out.println("\nMenú principal");
@@ -11,6 +11,10 @@ public class MainInteractivo {
         System.out.println("1. Ver precio actual de los productos.");
         System.out.println("2. Cambiar el precio de productos.");
         System.out.println("3. Obtener moneda.");
+        System.out.println("4. Crear expendedor (solo podrá haber un expendedor activo).");
+        System.out.println("5. Comprar producto.");
+        System.out.println("6. Consumir producto.");
+        System.out.println("7. Revisar vuelto.");
         System.out.println("Escribe el número de la operación que quieres realizar, y presiona enter:");
     }
 
@@ -38,7 +42,6 @@ public class MainInteractivo {
             inError = false;
         }
 
-
         return eleccion;
     }
 
@@ -48,6 +51,8 @@ public class MainInteractivo {
         Scanner inputPrincipal = new Scanner(System.in);
         boolean loopMenu = true;
         Moneda monedaUsuario = null;
+        Expendedor expendedor = null;
+        Comprador comprador = null;
 
         while(loopMenu) {
 
@@ -104,8 +109,53 @@ public class MainInteractivo {
                     };
                     break;
 
-            }
+                case 4:
+                    System.out.println("Ingresa cuánto stock tendrá de cada producto, o elige 0 para salir:");
+                    int stock = leerNumero(inputPrincipal, 100);
+                    if(stock == 0) { break;}
+                    expendedor = new Expendedor(stock);
+                    break;
 
+                case 5:
+                    if(expendedor == null) {
+                        System.out.println("Necesitas crear un expendedor para poder comprar.");
+                        break;
+                    }
+                    System.out.println("Elige el índice del producto que quieras comprar, o elige 0 para salir");
+                    for (ProductosEnum producto : ProductosEnum.values()) {
+                        System.out.println(producto.getIndice() + ". " + producto.getNombre() + ": $" + producto.getPrecio());
+                    }
+
+                    int elegirCompra = leerNumero(inputPrincipal, ProductosEnum.values().length);
+                    if (elegirCompra == 0) {
+                        break;
+                    }
+                    System.out.println("Se ha elegido " + ProductosEnum.values()[elegirCompra - 1].getNombre());
+                    comprador = new Comprador(monedaUsuario, elegirCompra, expendedor);
+                    break;
+
+                case 6:
+                    if(comprador == null) {
+                        System.out.println("No has comprado nada todavía.");
+                        break;
+                    }
+                    String sonido = comprador.queCompro();
+                    if(sonido == null){
+                        System.out.println("No has comprado nada todavía.");
+                        break;
+                    }
+                    System.out.println(comprador.queCompro());
+                    break;
+
+                case 7:
+                    if(comprador == null) {
+                        System.out.println("No has comprado nada todavía.");
+                        break;
+                    }
+                    System.out.println("En tu última compra has recibido un vuelto de $" + comprador.cuantoVuelto());
+                    break;
+
+            }
         }
         inputPrincipal.close();
         System.out.println("El programa ha finalizado exitosamente :)");
