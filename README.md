@@ -2,8 +2,8 @@
 
 ### Grupo 25
 #### Integrantes: 
-* José González Aguayo
-* Diego Matus Salas
+* José Efraín González Aguayo
+* Diego Antonio Matus Salas
 ***
 #### Para usar *Main Interactivo*, se deben seguir las instrucciones, ingresar los números solicitados y presionar Enter.
 ***
