@@ -39,9 +39,9 @@ public class Expendedor {
 
     /** Método que compra un producto del expendedor si se dan condiciones necesarias,
      * en caso de no cumplir con condiciones, se lanza una excepción.
-     * @param m Moneda con la que se va a pagar el producto.
+     * @param m {@link Moneda} con la que se va a pagar el producto.
      * @param eleccion Elección del producto a comprar.
-     * @return Producto comprado
+     * @return {@link Producto} comprado
      * @throws PagoIncorrectoException Se lanza si se intenta pagar con una moneda null.
      * @throws NoHayProductoException Se lanza si ya no quedan más de ese producto en su correspondiente depósito.
      * @throws PagoInsuficienteException Se lanza si la moneda usada no es suficiente para comprar producto.
