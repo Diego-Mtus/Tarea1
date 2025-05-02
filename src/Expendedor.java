@@ -18,7 +18,7 @@ public class Expendedor {
 
 
     /** Constructor que crea los productos contenidos en cada depósito.
-     * @param cantidad Cantidad de productos por cada deposito.
+     * @param cantidad Cantidad de productos por cada depósito.
      */
     public Expendedor(int cantidad) {
         depositoCocaCola = new Deposito<Producto>();
@@ -97,10 +97,10 @@ public class Expendedor {
         }
     }
 
-    /** Método usado dentro de comprarProductos() para gestionar el vuelto en monedas de 100 que se irán almacenando
+    /** Método usado dentro de {@code comprarProductos()} para gestionar el vuelto en monedas de 100 que se irán almacenando
      *  en el deposito de Monedas.
      * @param precioEnum Precio del producto que se quiere comprar.
-     * @param depositoMoneda Deposito de monedas donde se almacenaran monedas de 100.
+     * @param depositoMoneda Depósito de monedas donde se almacenaran monedas de 100.
      * @param m Moneda con la que se quiere pagar el producto.
      * */
     private void procesarMonedas(int precioEnum, Deposito<Moneda> depositoMoneda, Moneda m){
