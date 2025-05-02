@@ -19,6 +19,7 @@ public abstract class Producto {
     }
 
     /** Método abstracto que debe implementarse a cada producto que extienda {@link Producto}.
-     * Define el comportamiento especifico al usar un producto. */
+     * Define el comportamiento especifico al usar un producto.
+     * @return Acción de usar el producto*/
     public abstract String usar();
 }

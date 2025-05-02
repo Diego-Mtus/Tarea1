@@ -3,11 +3,12 @@
  * Cada producto tiene un índice único, un precio modificable y un nombre.
  * <p>
  * Productos existentes:
+ * </p>
  * <ul>
  *     <li><strong>Bebidas:</strong> Coca-Cola, Sprite, Fanta.</li>
  *     <li><strong>Dulces:</strong> Snickers, Super8.</li>
  * </ul>
- * </p>
+ *
  */
 
 public enum ProductosEnum {

@@ -1,6 +1,7 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
+/** Main principal que realiza pruebas fijas del correcto funcionamiento de cada clase creada, y prueba que las excepciones
+ * se atrapen cuando se necesite. <p>Se realizan pruebas de cada caso posible.</p> */
 public class Main {
     public static void main(String[] args) {
 

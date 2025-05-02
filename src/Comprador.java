@@ -13,9 +13,6 @@ public class Comprador {
      * @param moneda La {@link Moneda} utilizada para la compra.
      * @param cualProducto El índice del producto a comprar en la lista de productos disponibles. Vease índices de {@link ProductosEnum}
      * @param exp El {@link Expendedor} desde el cual se realiza la compra.
-     * @throws PagoIncorrectoException Se atrapa si se intenta pagar con una moneda null.
-     * @throws NoHayProductoException Se atrapa si ya no quedan más de ese producto en su correspondiente depósito.
-     * @throws PagoInsuficienteException Se atrapa si la moneda usada no es suficiente para comprar producto.
      * */
     public Comprador(Moneda moneda, int cualProducto, Expendedor exp){
         try {

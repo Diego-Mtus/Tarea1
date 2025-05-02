@@ -1,10 +1,14 @@
 import java.util.Scanner;
 
+/** Main interactivo para poder probar la funcionalidad del proyecto de manera interactiva, teniendo un menú principal con
+ * las acciones que se quieran realizar.*/
 public class MainInteractivo {
 
-    // Se debe actualizar manualmente de acuerdo a cuántas opciones definamos.
+    /** Cantidad de opciones disponibles en nuestro menú interactivo.
+     * <p>Se debe actualizar manualmente de acuerdo a cuántas opciones definamos.</p> */
     static final int CANTIDAD_INDICE = 7;
 
+    /** Despliegue de menú principal con sus índices para poder ir a la opción que queramos.*/
     private static void pantallaPrincipal(){
         System.out.println("\nMenú principal");
         System.out.println("0. Salir.");
@@ -18,8 +22,10 @@ public class MainInteractivo {
         System.out.println("Escribe el número de la operación que quieres realizar, y presiona enter:");
     }
 
-
-
+    /** Verificador que lee una entrada y comprueba que sea un número entero y que esté dentro de cierto rango.
+     * @param input El scanner que lee la entrada.
+     * @param cantidadOpciones El límite superior del rango permitido de la entrada.
+     * @return Retorna el entero ingresado que cumpla las condiciones.*/
     public static int leerNumero(Scanner input, int cantidadOpciones){
         boolean inError = true;
         int eleccion = -1;
