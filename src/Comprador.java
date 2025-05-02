@@ -1,4 +1,4 @@
-/** Clase que simula un comprador que quiere comprar {@link Producto} desde un {@code Expendedor},
+/** Clase que simula un comprador que quiere comprar {@link Producto} desde un {@link Expendedor},
  * una vez que tenga el producto, puede usarlo y ver su vuelto tras esa compra.*/
 public class Comprador {
     private String accion;
